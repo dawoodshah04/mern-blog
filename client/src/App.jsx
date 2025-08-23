@@ -1,18 +1,26 @@
-import './App.css'
+import "./App.css";
+import Header from "./components/Header.jsx";
+import Post from "./components/Post.jsx";
+import {Route, Routes} from "react-router"
 
 function App() {
-  
   return (
-       <main>
-      <header>
-        <a href="" className="logo">Myblog</a>
-        <nav>
-          <a href="">Login</a>
-          <a href="">Register</a>
-        </nav>
-      </header>
-    </main>    
-  )
+    
+    <Routes>
+      <Route index element={    
+    <main>
+      <Header/>
+      <Post/>
+      <Post/>
+      <Post/>
+      
+    </main>
+    }/>
+      <Route path="/login" element={
+        <div>Login Page</div>
+      }/>
+    </Routes>
+  );
 }
 
-export default App
+export default App;

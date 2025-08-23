@@ -1,14 +1,66 @@
+body{
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+img{
+  max-width: 100%;
+}
 main{
   padding: 10px;
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 header{
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 50px;
+  align-items: center;
 }
 
 header a{
   text-decoration: none;
+  color: inherit;
+}
+
+header a.logo{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+header nav{
+  gap: 15px;
+  display: flex;
+}
+
+.post{
+  display: grid;
+  grid-template-columns:0.9fr 1.1fr ;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.post .content h2{
+  margin: 0px;
+  font-size: 1.6rem;
+}
+
+.post p.info{
+  margin: 6px 0px;
+  display: flex;
+  color: #888;
+  font-size: 13px;
+  font-weight: bold;
+  gap: 8px;
+
+}
+
+.post p.info .author{
+  color: black;
+}
+
+.post .summary{
+  margin: 10px 0;
+  line-height: 1.4rem;
 }
