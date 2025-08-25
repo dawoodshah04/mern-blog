@@ -6,12 +6,20 @@ export default function RegisterPage(){
 
     const register = async (e) => {
         e.preventDefault();
-        const response = await fetch('/api/register',{
+      
+         const response = await fetch('/api/register',{
             method:'POST',
             headers: {'Content-type':'application/json'},
             body: JSON.stringify({username, password}),
         })
-    
+
+        // UI change needed
+
+        if(response.status === 200){
+             alert('Registration Successful!');
+        }else{
+            alert('Registration Failed')
+        }
 
    
     }
