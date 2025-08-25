@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors');
+const serverless = require("serverless-http");
 const { default: mongoose } = require('mongoose');
 const { User } = require('./models/User');
 const { Post } = require('./models/Post')
@@ -219,6 +220,10 @@ app.post('/api/logout',(req, res) => {
 
 dbconnection();
 
-app.listen(PORT, ()=>{
-    console.log(`Server running on PORT: ${PORT}`)
-});
+
+module.exports = app;
+module.exports.handler = serverless(app);
+
+// app.listen(PORT, ()=>{
+//     console.log(`Server running on PORT: ${PORT}`)
+// });
