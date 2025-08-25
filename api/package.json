@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon index.cjs",
+    "start": "node index.cjs"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
