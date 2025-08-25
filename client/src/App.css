@@ -1,7 +1,12 @@
 *{
   box-sizing: border-box;
 }
-
+a{
+  cursor: pointer;
+}
+button{
+  cursor: pointer;
+}
 body{
   color: #333;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -40,10 +45,19 @@ header nav{
 
 .post{
   display: grid;
-  grid-template-columns:0.9fr 1.1fr ;
+  grid-template-columns:1fr ;
   gap: 15px;
   margin-bottom: 25px;
 }
+
+@media screen and (min-width: 786px){
+  div.post{
+    grid-template-columns:0.9fr 1.1fr;
+  }
+}
+
+
+
 
 .post .content h2{
   margin: 0px;
@@ -62,6 +76,11 @@ header nav{
 
 .post p.info .author{
   color: black;
+}
+
+.post .content a{
+  text-decoration: none;
+  color: inherit;
 }
 
 .post .summary{
@@ -96,4 +115,62 @@ button{
 
 form h1{
   text-align: center;
+}
+
+.post-page .image{
+  max-height: fit-content;
+  display: flex;
+  overflow: hidden;
+}
+
+.post-page .image .img{
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+}
+
+.post-page a{
+  color: #333;
+  text-decoration: underline;
+}
+
+.post-page h1{
+  text-align: center ;
+  margin: 10px 0 10px;
+}
+
+.post-page time{
+  text-align: center;
+  display: block;
+  font-size: 12px;
+  font-family: monospace;
+  color: #aaa;
+}
+
+.post-page .author{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: .7rem;
+  font-weight: bold;
+}
+
+.edit-row{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.post-page a.edit-btn{
+  background-color: #333;
+  color: #fff;
+  display: inline-flex;
+  padding: 8px 15px;
+  font-size: small;
+  border-radius: 5px;
+  text-decoration: none;
+  align-items: center;
+  gap: 5px;
+}
+
+a svg{
+  height: 18px;
 }
