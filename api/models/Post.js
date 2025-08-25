@@ -1,10 +1,11 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const PostSchema = mongoose.Schema({
     title:String,
     summary:String,
     content:String,
-    cover:String
+    cover:String,
+    author:{type:mongoose.Schema.Types.ObjectId, ref:'User',required:true}
 },{
     timestamps:true
 });
