@@ -9,7 +9,7 @@ export const PostPage = () => {
 
     const {id} = useParams();
     useEffect(() => {
-        fetch(`/api/post/${id}`).then(response =>{
+    fetch(`${API_BASE_URL}/api/post/${id}`).then(response =>{
             response.json().then(postInfo => {
                 setpostInfo(postInfo);
             });

@@ -10,7 +10,7 @@ export default function LoginPage() {
 
   const login = async (e) => {
     e.preventDefault();
-    const response = await fetch('/api/login', {
+  const response = await fetch(`${API_BASE_URL}/api/login`, {
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify({ username, password }),

@@ -50,7 +50,7 @@ export default function CreatePost() {
       console.log("No file selected");
     }
 
-    const response = await fetch("/api/post", {
+  const response = await fetch(`${API_BASE_URL}/api/post`, {
       method: "POST",
       body: data,
       credentials:'include'

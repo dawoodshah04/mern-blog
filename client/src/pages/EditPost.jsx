@@ -42,7 +42,7 @@ export const EditPost = () => {
 
   // fetch post
   useEffect(() => {
-    fetch("/api/post/" + id)
+  fetch(`${API_BASE_URL}/api/post/` + id)
       .then((res) => res.json())
       .then((postInfo) => {
         setTitle(postInfo.title);
@@ -70,7 +70,7 @@ export const EditPost = () => {
       data.set("file", file);
     }
 
-    const response = await fetch("/api/post", {
+  const response = await fetch(`${API_BASE_URL}/api/post`, {
       method: "PUT",
       body: data,
       credentials: "include",

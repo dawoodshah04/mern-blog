@@ -8,14 +8,14 @@ export default function Header(){
 
     useEffect(() => {
       if (!userInfo?.username) {
-        fetch('/api/profile', { credentials: 'include' })
+  fetch(`${API_BASE_URL}/api/profile`, { credentials: 'include' })
           .then(response => response.json())
           .then(userInfo => setuserInfo(userInfo));
       }
     }, [userInfo, setuserInfo]);
 
     const logout = () => {
-      fetch('/api/logout',{
+  fetch(`${API_BASE_URL}/api/logout`,{
         credentials:'include',
         method:'POST'
       }); 
