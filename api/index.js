@@ -1,15 +1,23 @@
-const express = require('express')
-const cors = require('cors');
-const serverless = require("serverless-http");
-const { default: mongoose } = require('mongoose');
-const { User } = require('./models/User');
-const { Post } = require('./models/Post')
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const cookieParser = require("cookie-parser");
-const multer = require('multer');
-const uploadMiddleware = multer({dest:'uploads/'});
-const fs = require('fs');
+import express from "express";
+import cors from "cors";
+import serverless from "serverless-http";
+import mongoose from "mongoose";
+import { User } from "./models/User.js";
+import { Post } from "./models/Post.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import cookieParser from "cookie-parser";
+import multer from "multer";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// recreate __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const uploadMiddleware = multer({ dest: "uploads/" });
+
 const app = express();
 const PORT = 5000 || 8080;
 
@@ -198,13 +206,11 @@ jwt.verify(token, secret, {}, async (err, info) => {
     return res.status(400).json('you are not the author');
   }
 
-  // ✅ assign new values
   postDoc.title = title;
   postDoc.summary = summary;
   postDoc.content = content;
   postDoc.cover = newPath ? newPath : postDoc.cover;
 
-  // ✅ save the updated doc
   await postDoc.save();
 
   res.json(postDoc);
@@ -221,9 +227,9 @@ app.post('/api/logout',(req, res) => {
 dbconnection();
 
 
-module.exports = app;
-module.exports.handler = serverless(app);
+// module.exports = app;
+// module.exports.handler = serverless(app);
 
-// app.listen(PORT, ()=>{
-//     console.log(`Server running on PORT: ${PORT}`)
-// });
+app.listen(PORT, ()=>{
+    console.log(`Server running on PORT: ${PORT}`)
+});
