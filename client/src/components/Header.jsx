@@ -1,6 +1,8 @@
 import { Link } from "react-router";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
+import { API_BASE_URL } from "../config.js";
+
 
 export default function Header(){
 

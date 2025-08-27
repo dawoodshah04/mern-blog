@@ -3,6 +3,7 @@ import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
 import { useState, useEffect } from "react";
 import { Navigate, useParams } from "react-router";
+import { API_BASE_URL } from "../config.js";
 
 
 const modules = {

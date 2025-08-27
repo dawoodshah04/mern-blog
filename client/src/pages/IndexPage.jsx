@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Post from "../components/Post";
+import { API_BASE_URL } from "../config.js";
 
 export default function IndexPage(){
 

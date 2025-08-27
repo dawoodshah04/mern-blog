@@ -24,9 +24,22 @@ const PORT = 5000 || 8080;
 const salt = bcrypt.genSaltSync(10);
 const secret = '2hjvhcgj2bn54blb7l4bo5bcxysir34gioo2pf3b6o6'
 
+
+const allowedOrigins = [
+  "http://localhost:5173",   // dev
+  "https://mern-blog-coral.vercel.app"  // prod
+];
+
 app.use(cors(
 {
-    origin: 'http://localhost:5173',
+    
+    origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },     
     methods: ['POST','GET','PUT'],
     credentials: true
 }

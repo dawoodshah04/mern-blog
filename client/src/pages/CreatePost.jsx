@@ -2,6 +2,7 @@ import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router";
+import { API_BASE_URL } from "../config.js";
 
 const modules = {
   toolbar: [

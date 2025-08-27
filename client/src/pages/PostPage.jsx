@@ -2,6 +2,7 @@ import { formatISO9075 } from 'date-fns';
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams,Link } from 'react-router'
 import { UserContext } from '../contexts/UserContext';
+import { API_BASE_URL } from "../config.js";
 
 export const PostPage = () => {
     const [postInfo, setpostInfo] = useState(null);

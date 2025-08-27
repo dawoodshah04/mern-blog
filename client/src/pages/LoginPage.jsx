@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Navigate } from "react-router";
 import {UserContext} from "../contexts/UserContext.jsx";
+import { API_BASE_URL } from "../config.js";
 
 export default function LoginPage() {
   const [username, setusername] = useState('');
