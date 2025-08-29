@@ -237,7 +237,9 @@ app.post('/api/logout',(req, res) => {
     res.cookie('token', '').json('ok');
 });
 
-dbconnection();
+dbconnection().then(
+    console.log('DB connected!')
+).catch(err=>console.log(err));
 
 
 // module.exports = app;
