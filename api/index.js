@@ -82,7 +82,11 @@ app.post('/api/login',async (req, res)=>{
         // user loggedIn
         jwt.sign({username, id:UserDoc._id},secret,{},(err, token)=>{
             if (err) throw err;
-            res.cookie('token',token,{httpOnly:true})
+            res.cookie('token',token,{
+              httpOnly:true,
+              sameSite: 'none',
+              secure: true
+            })
             .json({ 
                 id:UserDoc._id,
                 username
