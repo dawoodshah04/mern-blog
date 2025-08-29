@@ -5,7 +5,7 @@ export default defineConfig(({ mode }) => ({
   server: mode === "development" ? {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'http://localhost:5000' || 'https://mern-blog-production-336f.up.railway.app',
         changeOrigin: true,
       },
     }
