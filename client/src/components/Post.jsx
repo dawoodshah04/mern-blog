@@ -9,7 +9,7 @@ export default function Post({ _id,title, summary, content, cover, createdAt, au
       <div className="image">
         
         <img
-          src={`http://localhost:5000/${cover}`}
+          src={`https://mern-blog-production-336f.up.railway.app/${cover}`}
           alt={title}
         />
       </div>
